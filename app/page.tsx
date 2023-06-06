@@ -18,7 +18,7 @@ export default async function Home() {
     }
   });
   return (
-    <div>
+    <div className='w-full'>
       <h1>Homepage</h1>
       <PostList posts={posts} />
     </div>

@@ -28,7 +28,7 @@ const Client: React.FC<ClientProps> = ({ content }) => {
     setHeadings([...articleHeadings]);
   }, []);
   return (
-    <div className>
+    <div>
       <article
         className="prose prose-slate dark:prose-invert max-w-full scroll-smooth"
         ref={articleRef}

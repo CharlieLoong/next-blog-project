@@ -46,7 +46,7 @@ function Page() {
           />
         </Suspense>
       </div>
-      <button onClick={handleSubmit} disabled className='cursor-not-allowed'>Submit</button>
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 }

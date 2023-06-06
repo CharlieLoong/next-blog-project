@@ -12,7 +12,7 @@ interface PostListProps {
 const PostList: FC<PostListProps> = (props) => {
   if (props.posts === undefined) return <div>undefined</div>;
   return (
-    <div className={`flex flex-col gap-4 min-w-[320px] ${props.className}`}>
+    <div className={`flex flex-col gap-4 w-full ${props.className}`}>
       {props.posts.map((post) => ( 
         <Post key={post.id} post={post} />
       ))}
