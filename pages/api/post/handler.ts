@@ -2,6 +2,7 @@ import prisma from '@/lib/db';
 import { User } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getServerSession } from 'next-auth/next';
+import { authOptions } from '@/pages/api/auth/[...nextauth]';
 
 // POST /api/post
 // Required fields in body: title
@@ -10,7 +11,7 @@ export default async function handle(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const session = await getServerSession({ req });
+  const session = await getServerSession(req, res, authOptions);
   if (req.method === 'POST') {
     const { title, content } = req.body;
     if (session) {
