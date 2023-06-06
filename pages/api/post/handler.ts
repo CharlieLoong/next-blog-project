@@ -15,13 +15,13 @@ export default async function handle(
   if (req.method === 'POST') {
     const { title, content } = req.body;
     if (session) {
-      const user = await prisma.user.findUnique({
+      let user = await prisma.user.findUnique({
         where: {
           email: session.user?.email,
         },
       });
       if (user == null) {
-        const newUser: User = await prisma.user.create({
+        user = await prisma.user.create({
           data: {
             email: session?.user?.email as string,
             name: session?.user?.name,
@@ -32,7 +32,7 @@ export default async function handle(
         data: {
           title: title,
           content: content,
-          authorId: user?.id || newUser.id,
+          authorId: user?.id
         },
       });
       return res.json(result);
