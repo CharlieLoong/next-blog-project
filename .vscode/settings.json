@@ -1,0 +1,13 @@
+{
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "sqltools.useNodeRuntime": true,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "next-app",
+      "database": "${workspaceFolder:next-app}/prisma/dev.db"
+    }
+  ]
+}
