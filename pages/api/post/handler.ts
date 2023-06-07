@@ -36,6 +36,7 @@ export default async function handle(
           authorId: user?.id
         },
       });
+      revalidatePath('/');
       return res.json(result);
     } else {
       res.status(401).send({ message: 'Unauthorized' });
