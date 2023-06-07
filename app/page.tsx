@@ -5,6 +5,7 @@ import { Post } from '@prisma/client';
 
 type Props = {};
 
+export const revalidate = 10
 export default async function Home() {
   const posts = await prisma.post.findMany({
     // where: {

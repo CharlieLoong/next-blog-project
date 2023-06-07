@@ -26,7 +26,7 @@ function Page() {
     router.push('/');
     router.refresh();
   }
-  if(status === 'unauthenticated') return (<div> Please Sign In First</div>)
+  // if(status === 'unauthenticated') return (<div> Please Sign In First</div>)
   return (
     <div className="grow flex flex-col gap-4">
       <h1 className="text-2xl text-center">Create a Post</h1>
